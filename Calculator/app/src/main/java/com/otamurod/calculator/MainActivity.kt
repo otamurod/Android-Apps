@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    var dotClick = true //dot can be pressed once by default
-    var positive = true //variable to control " - " button
+    private var dotClick = true //dot can be pressed once by default
+    private var positive = true //variable to control " - " button
 
-    fun buttonClickEvent(view: android.view.View) {
+    fun buttonClickEvent(view: View) {
 
         if (isNewOperation){
             showEntry.setText("")
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             }
             buttonPlusMinus.id ->{
                 if (positive){
-                    buttonClickValue = "-" + buttonClickValue
+                    buttonClickValue = "-$buttonClickValue"
                     positive = false //disable '-' button if once clicked
                 }else if(buttonClickValue.contains("-")){ //remove ' - ' when clicked if number is negative
                     buttonClickValue = buttonClickValue.substring(1)
@@ -70,6 +70,9 @@ class MainActivity : AppCompatActivity() {
             buttonDot.id ->{
                 //TODO: Prevent adding more than 1 dot
                 if (dotClick){
+                    if(buttonClickValue == ""){
+                        buttonClickValue += "0"
+                    }
                     buttonClickValue += "."
                     dotClick = false
                 }
@@ -80,9 +83,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    var operation:String? = null
-    var oldNumber = ""
-    var isNewOperation = true
+    private var operation:String? = null
+    private var oldNumber = ""
+    private var isNewOperation = true
 
     fun buttonOpEvent(view: View){
         val buttonClicked = view as Button
@@ -117,45 +120,49 @@ class MainActivity : AppCompatActivity() {
         if (operation != null){ //check whether an operation selected or not
             when(operation){
                 "+" -> {
-                    if (oldNumber != null && newNumber != null){
-                        result = oldNumber.toDouble() + newNumber.toDouble()
+                    result = if (oldNumber != "" && newNumber != ""){
+                        oldNumber.toDouble() + newNumber.toDouble()
                     }else{
-                        result = 0.000
+                        0.000
                     }
                 }
                 "-" -> {
-                    if (oldNumber != null && newNumber != null) {
-                        result = oldNumber.toDouble() - newNumber.toDouble()
+                    result = if (oldNumber != "" && newNumber != ""){
+                        oldNumber.toDouble() - newNumber.toDouble()
                     }else{
-                        result = 0.000
+                        0.000
                     }
                 }
                 "*" -> {
-                    if (oldNumber != null && newNumber != null) {
-                        result = oldNumber.toDouble() * newNumber.toDouble()
+                    result = if (oldNumber != "" && newNumber != ""){
+                        oldNumber.toDouble() * newNumber.toDouble()
                     }else{
-                        result = 0.000
+                        0.000
                     }
                 }
                 "/" -> {
-                    if (oldNumber != null && newNumber != null) {
-                        result = oldNumber.toDouble() / newNumber.toDouble()
+                    result = if (oldNumber != "" && newNumber != ""){
+                        oldNumber.toDouble() / newNumber.toDouble()
                     }else{
-                        result = 0.000
+                        0.000
                     }
                 }
             }
-        }else{
+        }else if (operation == null){ //result is oldNumber if user presses = button before an operation is taken
+            oldNumber = showEntry.text.toString()
+            result = oldNumber.toDouble()
+        }else{ // if there is no oldNumber, result stays 0
             result = 0.000
         }
 
         if (result != null){
-            showEntry.setText("${result!!.toFloat()}").toString() //display result
-            operation = null
+            showEntry.setText("${result.toFloat()}").toString() //display result
+            operation = null //block operation buttons
         }else{
             showEntry.setText("0").toString()
             operation = null
         }
+        //enable re-usability
         isNewOperation = true
         dotClick = true
 
