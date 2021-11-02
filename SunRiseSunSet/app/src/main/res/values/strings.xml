@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SunRiseSunSet</string>
+    <string name="enter_city_name">Enter City Name</string>
+    <string name="get_sunset">Get SunSet</string>
+    <string name="sunrise_time">SunRise Time</string>
+</resources>
