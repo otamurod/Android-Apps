@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyNotes" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#37474f</item>
+        <item name="colorPrimaryDark">#102027</item>
+        <item name="colorAccent">@color/grey_light</item>
+        <!-- Customize your theme here. -->
+        <item name="colorButtonNormal">#F5F5F5</item>
+        <item name="android:navigationBarColor">#102027</item>
+
+    </style>
+</resources>
