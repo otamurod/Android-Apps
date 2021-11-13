@@ -31,34 +31,50 @@ class MainActivity : AppCompatActivity() {
         listOfNotes.add(Note(2, "Third Note", "Content of the last note"))
          */
 
-        //Load From Database
-        loadQuery("%")
+        /**
+         * LOAD FROM DATABASE
+         */
+        loadQuery("%", "%")
 
     }
 
-    //reload view after adding or deleting, etc
+    /**
+     * reload view after adding or deleting, etc
+     */
     override fun onResume() {
         super.onResume()
-        loadQuery("%")
+        loadQuery("%", "%")
     }
     @SuppressLint("Range")
-    fun loadQuery(title: String){
+    fun loadQuery(title: String, content: String){
         var dbManager = DBManager(this)
         val projection = arrayOf("ID", "Title", "Content")
-        val selectionArgs = arrayOf(title)
-        val cursor = dbManager.query(projection, "Title LIKE ?", selectionArgs, "ID")
+        val selectionTitleArgs = arrayOf(title)
+        val selectionContentArgs = arrayOf(content)
+        val cursor1 = dbManager.query(projection, "Title LIKE ?", selectionTitleArgs, "ID")
+        val cursor2 = dbManager.query(projection, "Content LIKE ?", selectionContentArgs, "ID")
 
         listOfNotes.clear()
 
-        if (cursor.moveToFirst()){
+        if (cursor1.moveToFirst()){
             do {
-                val ID = cursor.getInt(cursor.getColumnIndex("ID"))
-                val Title = cursor.getString(cursor.getColumnIndex("Title"))
-                val Description = cursor.getString(cursor.getColumnIndex("Content"))
+                val ID = cursor1.getInt(cursor1.getColumnIndex("ID"))
+                val Title = cursor1.getString(cursor1.getColumnIndex("Title"))
+                val Description = cursor1.getString(cursor1.getColumnIndex("Content"))
 
                 listOfNotes.add(Note(ID, Title, Description))
 
-            }while (cursor.moveToNext())
+            }while (cursor1.moveToNext())
+        }
+        else if (cursor2.moveToFirst()){
+            do {
+                val ID = cursor2.getInt(cursor1.getColumnIndex("ID"))
+                val Title = cursor2.getString(cursor1.getColumnIndex("Title"))
+                val Description = cursor2.getString(cursor1.getColumnIndex("Content"))
+
+                listOfNotes.add(Note(ID, Title, Description))
+
+            }while (cursor2.moveToNext())
         }
 
         val myNotesAdapter = MyNotesAdapter(this, listOfNotes)
@@ -77,13 +93,20 @@ class MainActivity : AppCompatActivity() {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 Toast.makeText(applicationContext, query, Toast.LENGTH_LONG).show()
-                //search database
-                loadQuery("%$query%")
+                /**
+                 * search database
+                 */
+                loadQuery("%$query%", "%$query%")
 
                 return false
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
+                /**
+                 * reload from database when search bar cleared
+                 */
+                loadQuery("%", "%")
+
                 return false
             }
         })
@@ -95,7 +118,9 @@ class MainActivity : AppCompatActivity() {
 
         when(item.itemId){
             R.id.addNote ->{
-                //go to add note page
+                /**
+                 * go to add note page
+                 */
                 val intent = Intent(this, AddNote::class.java)
                 startActivity(intent)
             }
@@ -131,14 +156,20 @@ class MainActivity : AppCompatActivity() {
             val myNote = listNotesAdapter[p0]
             myView.tvTitle.text = myNote.noteTitle
             myView.tvContent.text = myNote.noteContent
-            //Listener
+            /**
+             * Listener
+             */
             myView.imgVDelete.setOnClickListener(View.OnClickListener {
                 var dbManager = DBManager(this.context!!)
                 val selectionArgs = arrayOf(myNote.noteID.toString())
-                //delete note
+                /**
+                 * delete note
+                 */
                 dbManager.delete("ID=?", selectionArgs)
-                //reload
-                loadQuery("%")
+                /**
+                 * reload
+                 */
+                loadQuery("%", "%")
             })
 
             myView.imgVEdit.setOnClickListener(View.OnClickListener {
@@ -150,7 +181,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToUpdate(note: Note) {
-        //go to add note page
+        /**
+         * go to add note page
+         */
         val intent = Intent(this, AddNote::class.java)
         intent.putExtra("ID", note.noteID)
         intent.putExtra("Title", note.noteTitle)

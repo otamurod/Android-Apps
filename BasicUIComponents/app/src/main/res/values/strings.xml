@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Basic UI Components</string>
+    <string name="petemoss_font_family">Petemoss Font Family</string>
+    <string name="image_from_picasso">Image From Picasso</string>
+    <string name="image_from_glide">Image From Glide</string>
+    <string name="image_from_fresco">Image From Fresco</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+</resources>
