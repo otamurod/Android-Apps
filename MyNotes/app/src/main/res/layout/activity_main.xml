@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/gray"
+    tools:context="com.hussein.startup.MainActivity">
 
     <ListView
-        android:divider="@null"
-        android:id="@+id/lsViewNotes"
+        android:id="@+id/lvNotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:baselineAligned="false" />
+        android:background="@color/gray"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 </LinearLayout>

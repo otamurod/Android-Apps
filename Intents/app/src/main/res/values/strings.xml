@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Intents</string>
+    <string name="go_to_second_activity">Go to second activity</string>
+</resources>
