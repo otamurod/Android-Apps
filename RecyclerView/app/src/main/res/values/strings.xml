@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="true">RecyclerView</string>
+    <string name="name">Name</string>
+    <string name="number">Number</string>
+    <string name="add_to_contacts">Add To Contacts</string>
+    <string name="update_contact">Update Contact</string>
+    <string name="delete_contact">Delete Contact</string>
+</resources>

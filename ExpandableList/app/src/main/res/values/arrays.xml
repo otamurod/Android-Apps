@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_array">
+        <item>Kotlin</item>
+        <item>Java</item>
+        <item>Android</item>
+        <item>Flutter</item>
+    </string-array>
+</resources>

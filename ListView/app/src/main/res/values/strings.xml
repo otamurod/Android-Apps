@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Views</string>
+    <string name="list_view">List View</string>
+    <string name="grid_view">Grid View</string>
+</resources>
