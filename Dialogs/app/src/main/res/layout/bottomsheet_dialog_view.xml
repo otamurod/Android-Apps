@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/file_upload"
+        android:drawablePadding="40dp"
+        android:gravity="start"
+        android:text="Upload photos or videos"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/camera"
+        android:drawablePadding="40dp"
+        android:gravity="start"
+        android:text="Use Camera"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</LinearLayout>

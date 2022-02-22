@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_internet.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_internet_info.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_minutes.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_minutes_info.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_sms.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_sms_info.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_tariflar.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_tariflar_info.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_xizmatlar.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_yangiliklar.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/tarif.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket1.xml" value="0.32864583333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

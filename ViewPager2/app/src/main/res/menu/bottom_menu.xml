@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/first"
+        android:title="First"
+        android:icon="@drawable/ic_launcher_background" />
+
+    <item
+        android:id="@+id/second"
+        android:title="Second"
+        android:icon="@drawable/ic_launcher_background" />
+
+    <item
+        android:id="@+id/third"
+        android:title="Third"
+        android:icon="@drawable/ic_launcher_background" />
+
+    <item
+        android:id="@+id/four"
+        android:title="Four"
+        android:icon="@drawable/ic_launcher_background" />
+
+</menu>

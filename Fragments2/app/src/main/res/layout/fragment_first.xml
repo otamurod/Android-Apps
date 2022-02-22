@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/green"
+    android:padding="50dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".FirstFragment">
+
+    <EditText
+        android:id="@+id/username"
+        android:hint="Username"
+        android:textAlignment="center"
+        android:textColorHint="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/password"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:textColorHint="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/register_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration"
+        android:padding="4dp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/purple_700"/>
+
+    <Button
+        android:id="@+id/button"
+        android:text="Sign In"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        app:backgroundTint="#f57b1e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

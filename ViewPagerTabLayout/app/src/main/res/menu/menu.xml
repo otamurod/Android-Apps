@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main"
+        android:icon="@drawable/swap"
+        android:title="Profile"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/category"
+        android:icon="@drawable/category"
+        android:title="Category"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/indicator"
+        android:icon="@drawable/indicator"
+        android:title="Category"
+        app:showAsAction="ifRoom"/>
+
+</menu>

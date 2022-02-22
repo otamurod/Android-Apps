@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Fragments2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="royxatdan_otish">Ro\'yxatdan o\'tish</string>
+    <string name="uzbekistan">Uzbekistan</string>
+    <string name="yoki_ro_yxatdan_o_tish_uchun_ntelefon_raqamingizdan_foydalaning">yoki ro\'yxatdan o\'tish uchun\ntelefon raqamingizdan foydalaning</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="_998">+998</string>
+    <string name="_93_4614388">93 4614388</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="googleplus">GooglePlus</string>
+    <string name="facebook">Facebook</string>
+</resources>

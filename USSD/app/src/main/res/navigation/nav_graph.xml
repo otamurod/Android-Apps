@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.otamurod.ussd.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_tariflar"
+            app:destination="@id/tariflar" />
+        <action
+            android:id="@+id/action_homeFragment_to_minutes"
+            app:destination="@id/minutes" />
+        <action
+            android:id="@+id/action_homeFragment_to_internet"
+            app:destination="@id/internet" />
+        <action
+            android:id="@+id/action_homeFragment_to_sms"
+            app:destination="@id/sms" />
+        <action
+            android:id="@+id/action_homeFragment_to_xizmatlar"
+            app:destination="@id/xizmatlar" />
+        <action
+            android:id="@+id/action_homeFragment_to_yangiliklar"
+            app:destination="@id/yangiliklar" />
+    </fragment>
+    <fragment
+        android:id="@+id/tariflar"
+        android:name="com.otamurod.ussd.Tariflar"
+        android:label="fragment_tariflar"
+        tools:layout="@layout/fragment_tariflar" >
+        <action
+            android:id="@+id/action_tariflar_to_tariflarInfo"
+            app:destination="@id/tariflarInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/tariflarInfo"
+        android:name="com.otamurod.ussd.TariflarInfo"
+        android:label="fragment_tariflar_info"
+        tools:layout="@layout/fragment_tariflar_info" />
+    <fragment
+        android:id="@+id/minutes"
+        android:name="com.otamurod.ussd.Minutes"
+        android:label="fragment_minutes"
+        tools:layout="@layout/fragment_minutes" >
+        <action
+            android:id="@+id/action_minutes_to_minutesInfo"
+            app:destination="@id/minutesInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/minutesInfo"
+        android:name="com.otamurod.ussd.MinutesInfo"
+        android:label="fragment_minutes_info"
+        tools:layout="@layout/fragment_minutes_info" />
+    <fragment
+        android:id="@+id/internet"
+        android:name="com.otamurod.ussd.Internet"
+        android:label="fragment_internet"
+        tools:layout="@layout/fragment_internet" >
+        <action
+            android:id="@+id/action_internet_to_internetInfo"
+            app:destination="@id/internetInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/internetInfo"
+        android:name="com.otamurod.ussd.InternetInfo"
+        android:label="fragment_internet_info"
+        tools:layout="@layout/fragment_internet_info" />
+    <fragment
+        android:id="@+id/sms"
+        android:name="com.otamurod.ussd.Sms"
+        android:label="fragment_sms"
+        tools:layout="@layout/fragment_sms" >
+        <action
+            android:id="@+id/action_sms_to_smsInfo"
+            app:destination="@id/smsInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsInfo"
+        android:name="com.otamurod.ussd.SmsInfo"
+        android:label="fragment_sms_info"
+        tools:layout="@layout/fragment_sms_info" />
+    <fragment
+        android:id="@+id/xizmatlar"
+        android:name="com.otamurod.ussd.Xizmatlar"
+        android:label="fragment_xizmatlar"
+        tools:layout="@layout/fragment_xizmatlar" />
+    <fragment
+        android:id="@+id/yangiliklar"
+        android:name="com.otamurod.ussd.Yangiliklar"
+        android:label="fragment_yangiliklar"
+        tools:layout="@layout/fragment_yangiliklar" />
+</navigation>
