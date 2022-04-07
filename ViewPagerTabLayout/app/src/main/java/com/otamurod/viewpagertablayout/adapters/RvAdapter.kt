@@ -16,7 +16,6 @@ class RvAdapter(var imageList: ArrayList<String>, val itemClickListener: OnItemC
 
         fun onBind(string: String, clickListener: OnItemClickListener) {
             Picasso.get().load(string).into(itemView.img)
-
             itemView.setOnClickListener {
                 clickListener.onItemClicked(string)
             }

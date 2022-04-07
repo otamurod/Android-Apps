@@ -40,13 +40,22 @@
 
         <Button
             android:id="@+id/button3"
-            android:tag="music_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:background="@drawable/custom_button"
+            android:tag="music_three"
             android:text="@string/music_three" />
 
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Stop"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/green" />
 
     </LinearLayout>
+
 </RelativeLayout>

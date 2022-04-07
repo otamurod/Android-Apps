@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <EditText
+        android:id="@+id/group_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="6dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Guruh nomi"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/mentor_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:spinnerMode="dropdown" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/time_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center"
+        android:padding="10dp"
+        android:spinnerMode="dropdown" />
+
+</LinearLayout>

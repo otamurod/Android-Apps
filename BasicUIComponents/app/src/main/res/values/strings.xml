@@ -7,4 +7,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="submit">Submit</string>
+    <string name="dynamic_text">This text is created dynamically</string>
+    <string name="second_activity">Second Activity</string>
 </resources>

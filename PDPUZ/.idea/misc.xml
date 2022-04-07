@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/edit_background.xml" value="0.236" />
+        <entry key="app/src/main/res/drawable/ic_calendar.xml" value="0.236" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
+        <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.236" />
+        <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.236" />
+        <entry key="app/src/main/res/layout/activity_courses.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/activity_groups.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/activity_mentors.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/add_course_dialog.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/delete_student_dialog.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/edit_group_dialog.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/edit_mentor_dialog.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_add_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_add_mentor.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_add_student_to_course.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_add_student_to_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_all_courses.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_all_courses_list.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_course_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_course_info.xml" value="0.31851851851851853" />
+        <entry key="app/src/main/res/layout/fragment_course_mentor.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_courses_in_mentor.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_group_to_open.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_open_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_view_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket_course.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket_mentor.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/ticket_student.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/menu/menu_course.xml" value="0.2361111111111111" />
+        <entry key="app/src/main/res/menu/menu_empty.xml" value="0.1712962962962963" />
+        <entry key="app/src/main/res/menu/menu_example.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/menu/menu_group.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/menu/menu_mentor.xml" value="0.2361111111111111" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1455" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

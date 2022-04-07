@@ -1,5 +1,6 @@
 package com.otamurod.musicplayer
 
+import android.graphics.Color.GREEN
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,14 +23,27 @@ class MainActivity : AppCompatActivity() {
             playMusic(button3)
         }
 
-
     }
 
 
     fun playMusic(button: View){
 
         var button = button as Button
+        var originalBg = button.background
+
         val mediaPlayer = MediaPlayer.create(this, resources.getIdentifier(button.tag as String, "raw", packageName))
         mediaPlayer.start()
+
+        if(mediaPlayer.isPlaying){
+            button.setBackgroundColor(GREEN)
+        }
+
+        stop_button.setOnClickListener {
+
+            mediaPlayer.reset()
+            button.background = originalBg
+
+        }
+
     }
 }

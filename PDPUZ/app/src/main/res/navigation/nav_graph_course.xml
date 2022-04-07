@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_course"
+    app:startDestination="@id/allCoursesListFragment">
+
+    <fragment
+        android:id="@+id/allCoursesListFragment"
+        android:name="com.otamurod.pdpuz.fragments.course_fragments.AllCoursesListFragment"
+        android:label="fragment_all_courses_list"
+        tools:layout="@layout/fragment_all_courses_list">
+        <action
+            android:id="@+id/action_allCoursesListFragment_to_courseInfoFragment"
+            app:destination="@id/courseInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseInfoFragment"
+        android:name="com.otamurod.pdpuz.fragments.course_fragments.CourseInfoFragment"
+        android:label="fragment_course_info"
+        tools:layout="@layout/fragment_course_info">
+        <action
+            android:id="@+id/action_courseInfoFragment_to_addStudentToCourseFragment"
+            app:destination="@id/addStudentToCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentToCourseFragment"
+        android:name="com.otamurod.pdpuz.fragments.course_fragments.AddStudentToCourseFragment"
+        android:label="fragment_add_student_to_course"
+        tools:layout="@layout/fragment_add_student_to_course" />
+</navigation>

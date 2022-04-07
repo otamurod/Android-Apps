@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allCoursesFragment">
+    <fragment
+        android:id="@+id/allCoursesFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.AllCoursesFragment"
+        android:label="fragment_all_courses"
+        tools:layout="@layout/fragment_all_courses">
+        <action
+            android:id="@+id/action_allCoursesFragment_to_courseGroupFragment"
+            app:destination="@id/courseGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseGroupFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.CourseGroupFragment"
+        android:label="fragment_course_group"
+        tools:layout="@layout/fragment_course_group">
+        <action
+            android:id="@+id/action_courseGroupFragment_to_openGroupFragment"
+            app:destination="@id/openGroupFragment" />
+        <action
+            android:id="@+id/action_courseGroupFragment_to_groupToOpenFragment"
+            app:destination="@id/groupToOpenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/openGroupFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.OpenGroupFragment"
+        android:label="fragment_open_group"
+        tools:layout="@layout/fragment_open_group">
+        <action
+            android:id="@+id/action_openGroupFragment_to_viewGroupFragment"
+            app:destination="@id/viewGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupToOpenFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.GroupToOpenFragment"
+        android:label="fragment_group_to_open"
+        tools:layout="@layout/fragment_group_to_open">
+        <action
+            android:id="@+id/action_groupToOpenFragment_to_addGroupFragment"
+            app:destination="@id/addGroupFragment" />
+        <action
+            android:id="@+id/action_groupToOpenFragment_to_viewGroupFragment"
+            app:destination="@id/viewGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGroupFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.AddGroupFragment"
+        android:label="fragment_add_group"
+        tools:layout="@layout/fragment_add_group" />
+    <fragment
+        android:id="@+id/viewGroupFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.ViewGroupFragment"
+        android:label="fragment_view_group"
+        tools:layout="@layout/fragment_view_group">
+        <action
+            android:id="@+id/action_viewGroupFragment_to_addStudentToGroupFragment"
+            app:destination="@id/addStudentToGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentToGroupFragment"
+        android:name="com.otamurod.pdpuz.fragments.group_fragments.AddStudentToGroupFragment"
+        android:label="fragment_add_student_to_group"
+        tools:layout="@layout/fragment_add_student_to_group" />
+</navigation>

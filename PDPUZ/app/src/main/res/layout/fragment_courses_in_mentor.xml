@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="23dp"
+    android:paddingTop="17dp"
+    android:paddingRight="23dp"
+    android:paddingBottom="17dp"
+    tools:context=".fragments.mentor_fragments.CoursesInMentorFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_course"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1"
+        tools:listitem="@layout/ticket_course" />
+
+</LinearLayout>

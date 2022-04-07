@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+    <Button
+        android:id="@+id/show_all_citizens_btn"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Barcha Fuqarolar"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:backgroundTint="@null" />
+
+    <Button
+        android:id="@+id/add_citizen_btn"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Fuqaroga Passport Berish"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:backgroundTint="@null" />
+
+
+</LinearLayout>

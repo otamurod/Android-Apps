@@ -15,13 +15,13 @@ import com.otamurod.playmusic.models.Music
 import java.io.File
 import java.io.FileDescriptor
 import java.io.FileInputStream
-import java.util.*
 
 
 class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
 
     lateinit var playBinding: ActivityPlayBinding
     lateinit var musicList: ArrayList<Music>
+    lateinit var shuffledMusics: ArrayList<Music>
     lateinit var handler: Handler
     private var mediaPlayer: MediaPlayer? = null
     private var musicPosition: Int = 0
@@ -38,23 +38,22 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
         handler = Handler(mainLooper)
         musicPosition = intent.getIntExtra("position", 0)
         musicList = getAllAudio()
+        shuffledMusics = getAllAudio()
+        shuffledMusics.shuffle()
+
         setMusicInfo(musicPosition)
 
         playBinding.repeat.setOnClickListener {
             playBinding.repeat.visibility = View.GONE
-            playBinding.shuffle.visibility = View.VISIBLE
-            playBinding.previousBtn.isClickable = true
-            playBinding.nextBtn.isClickable = true
+            playBinding.loop.visibility = View.VISIBLE
         }
         playBinding.shuffle.setOnClickListener {
             playBinding.shuffle.visibility = View.GONE
-            playBinding.loop.visibility = View.VISIBLE
+            playBinding.repeat.visibility = View.VISIBLE
         }
         playBinding.loop.setOnClickListener {
             playBinding.loop.visibility = View.GONE
-            playBinding.repeat.visibility = View.VISIBLE
-            playBinding.previousBtn.isClickable = false
-            playBinding.nextBtn.isClickable = false
+            playBinding.shuffle.visibility = View.VISIBLE
         }
 
         playBinding.playBtn.setOnClickListener {
@@ -70,7 +69,6 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
             }
 
         }
-
         playBinding.previousBtn.setOnClickListener {
             if (musicPosition > 0) {
                 mediaPlayer?.pause()
@@ -81,7 +79,6 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
                 onCompletion()
             }
         }
-
         playBinding.nextBtn.setOnClickListener {
             if (musicPosition < musicList.size - 1) {
                 mediaPlayer?.pause()
@@ -92,7 +89,6 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
                 onCompletion()
             }
         }
-
         playBinding.backwardBtn.setOnClickListener {
             if (mediaPlayer != null && mediaPlayer?.currentPosition != 0) {
                 mediaPlayer?.seekTo(mediaPlayer?.currentPosition?.minus(3000)!!)
@@ -100,7 +96,6 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
                 playBinding.musicStartTime.text = currentTime
             }
         }
-
         playBinding.forwardBtn.setOnClickListener {
             if (mediaPlayer?.currentPosition != mediaPlayer?.duration) {
                 mediaPlayer?.seekTo(mediaPlayer?.currentPosition?.plus(3000)!!)
@@ -132,6 +127,12 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
 
         })
 
+        mediaPlayer?.setOnCompletionListener {
+            musicPosition += 1
+            setMusicInfo(musicPosition)
+            playMusic(musicPosition)
+        }
+
     }
 
     private fun returnCurrentTime(currentPosition: Int?) {
@@ -156,21 +157,42 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
     }
 
     private fun returnEndTime(musicPosition: Int) {
-        val minEnd = (musicList[musicPosition].duration!! / 60_000).toInt()
-        val secEnd = (musicList[musicPosition].duration!! % 60_000).toInt() / 1000
-        when {
-            minEnd < 10 -> {
-                if (secEnd < 10) {
-                    endTime = "0$minEnd:0$secEnd"
-                } else {
-                    endTime = "0$minEnd:$secEnd"
+        if (playBinding.shuffle.visibility == View.VISIBLE) {
+            val minEnd = (shuffledMusics[musicPosition].duration!! / 60_000).toInt()
+            val secEnd = (shuffledMusics[musicPosition].duration!! % 60_000).toInt() / 1000
+            when {
+                minEnd < 10 -> {
+                    if (secEnd < 10) {
+                        endTime = "0$minEnd:0$secEnd"
+                    } else {
+                        endTime = "0$minEnd:$secEnd"
+                    }
+                }
+                minEnd >= 10 -> {
+                    if (secEnd < 10) {
+                        endTime = "$minEnd:0$secEnd"
+                    } else {
+                        endTime = "$minEnd:$secEnd"
+                    }
                 }
             }
-            minEnd >= 10 -> {
-                if (secEnd < 10) {
-                    endTime = "$minEnd:0$secEnd"
-                } else {
-                    endTime = "$minEnd:$secEnd"
+        } else {
+            val minEnd = (musicList[musicPosition].duration!! / 60_000).toInt()
+            val secEnd = (musicList[musicPosition].duration!! % 60_000).toInt() / 1000
+            when {
+                minEnd < 10 -> {
+                    if (secEnd < 10) {
+                        endTime = "0$minEnd:0$secEnd"
+                    } else {
+                        endTime = "0$minEnd:$secEnd"
+                    }
+                }
+                minEnd >= 10 -> {
+                    if (secEnd < 10) {
+                        endTime = "$minEnd:0$secEnd"
+                    } else {
+                        endTime = "$minEnd:$secEnd"
+                    }
                 }
             }
         }
@@ -178,35 +200,66 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
 
     private fun setMusicInfo(musicPosition: Int) {
 
-        playBinding.musicTitle.text = musicList[musicPosition].title
-        playBinding.position.text = "${musicPosition + 1} / ${musicList.size}"
+        if (playBinding.shuffle.visibility == View.VISIBLE) {
+            playBinding.musicTitle.text = shuffledMusics[musicPosition].title
+            playBinding.position.text = "${musicPosition + 1} / ${shuffledMusics.size}"
 
-        Glide.with(this)
-            .asBitmap()
-            .load(musicList[musicPosition].artUri)
-            .placeholder(R.drawable.music_bg)
-            .into(playBinding.container)
+            Glide.with(this)
+                .asBitmap()
+                .load(shuffledMusics[musicPosition].artUri)
+                .placeholder(R.drawable.music_bg)
+                .into(playBinding.container)
 
-        Glide.with(this)
-            .asBitmap()
-            .load(musicList[musicPosition].artUri)
-            .placeholder(R.drawable.music_bg) //set default image if no art is exist
-            .into(playBinding.musicThumb)
+            Glide.with(this)
+                .asBitmap()
+                .load(shuffledMusics[musicPosition].artUri)
+                .placeholder(R.drawable.music_bg) //set default image if no art is exist
+                .into(playBinding.musicThumb)
 
-        playBinding.musicArtist.text = musicList[musicPosition].artist
+            playBinding.musicArtist.text = shuffledMusics[musicPosition].artist
 
-        currentTime = "00:00"
-        returnEndTime(musicPosition)
+            currentTime = "00:00"
+            returnEndTime(musicPosition)
 
-        playBinding.musicStartTime.text = currentTime
-        playBinding.musicEndTime.text = endTime
+            playBinding.musicStartTime.text = currentTime
+            playBinding.musicEndTime.text = endTime
+        } else {
+
+            playBinding.musicTitle.text = musicList[musicPosition].title
+            playBinding.position.text = "${musicPosition + 1} / ${musicList.size}"
+
+            Glide.with(this)
+                .asBitmap()
+                .load(musicList[musicPosition].artUri)
+                .placeholder(R.drawable.music_bg)
+                .into(playBinding.container)
+
+            Glide.with(this)
+                .asBitmap()
+                .load(musicList[musicPosition].artUri)
+                .placeholder(R.drawable.music_bg) //set default image if no art is exist
+                .into(playBinding.musicThumb)
+
+            playBinding.musicArtist.text = musicList[musicPosition].artist
+
+            currentTime = "00:00"
+            returnEndTime(musicPosition)
+
+            playBinding.musicStartTime.text = currentTime
+            playBinding.musicEndTime.text = endTime
+        }
 
     }
 
     private fun playMusic(musicPosition: Int) {
 
         releaseMP()
-        val file = File(musicList[musicPosition].path!!)
+        val file: File
+        if (playBinding.shuffle.visibility == View.VISIBLE) {
+            file = File(shuffledMusics[musicPosition].path!!)
+        } else {
+            file = File(musicList[musicPosition].path!!)
+        }
         val inputStream = FileInputStream(file)
         val fileDescriptor: FileDescriptor = inputStream.fd
         playBinding.playBtn.setImageResource(R.drawable.pause)
@@ -218,6 +271,8 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
             mediaPlayer?.prepareAsync()
 
             handler.postDelayed(runnable, 100)
+        } else {
+            mediaPlayer?.start()
         }
     }
 
@@ -238,6 +293,13 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
 
             if (mediaPlayer != null) {
                 playBinding.seekbar.max = mediaPlayer?.duration!!
+            }
+            /**  Play Next Song If player finished*/
+            if (currentTime == endTime) {
+                if (playBinding.repeat.visibility != View.VISIBLE) {
+                    musicPosition += 1
+                }
+                onCompletion()
             }
 
             handler.postDelayed(this, 100)
@@ -314,8 +376,8 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         releaseMP()
+        super.onDestroy()
     }
 
     private fun onCompletion() {
@@ -323,19 +385,21 @@ class PlayActivity : AppCompatActivity(), MediaPlayer.OnPreparedListener {
         if (playBinding.repeat.visibility == View.VISIBLE) {
             // repeat is on play same song again
             setMusicInfo(musicPosition)
+            playMusic(musicPosition)
         } else if (playBinding.shuffle.visibility == View.VISIBLE) {
             // shuffle is on - play a random song
-            val rand = Random()
-            musicPosition = rand.nextInt(musicList.size - 1)
             setMusicInfo(musicPosition)
+            playMusic(musicPosition)
         } else if (playBinding.loop.visibility == View.VISIBLE) {
             // no repeat or shuffle ON - play next song
             if (musicPosition < musicList.size - 1) {
                 setMusicInfo(musicPosition)
+                playMusic(musicPosition)
             } else {
                 // play first song
                 musicPosition = 0
                 setMusicInfo(musicPosition)
+                playMusic(musicPosition)
             }
         }
     }

@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var foodView = inflater.inflate(R.layout.food_ticket, null)
             foodView.imageViewFood.setImageResource(food.image!!)
+
             foodView.imageViewFood.setOnClickListener {
                 val intent = Intent(context, FoodDetails::class.java)
                 intent.putExtra("name", food.name!!)
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("image", food.image!!)
                 context!!.startActivity(intent)
             }
+
             foodView.textViewFood.text = food.name!!
 
             return foodView

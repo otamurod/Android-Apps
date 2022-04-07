@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.otamurod.passportdata.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.otamurod.passportdata.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_allCitizensFragment"
+            app:destination="@id/allCitizensFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addCitizenFragment"
+            app:destination="@id/addCitizenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allCitizensFragment"
+        android:name="com.otamurod.passportdata.fragments.AllCitizensFragment"
+        android:label="fragment_all_citizens"
+        tools:layout="@layout/fragment_all_citizens" >
+        <action
+            android:id="@+id/action_allCitizensFragment_to_citizenDataFragment"
+            app:destination="@id/citizenDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCitizenFragment"
+        android:name="com.otamurod.passportdata.fragments.AddCitizenFragment"
+        android:label="fragment_add_citizen"
+        tools:layout="@layout/fragment_add_citizen" />
+    <fragment
+        android:id="@+id/citizenDataFragment"
+        android:name="com.otamurod.passportdata.fragments.CitizenDataFragment"
+        android:label="fragment_citizen_data"
+        tools:layout="@layout/fragment_citizen_data" />
+</navigation>

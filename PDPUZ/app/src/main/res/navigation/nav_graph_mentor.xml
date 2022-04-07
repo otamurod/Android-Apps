@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_mentor"
+    app:startDestination="@id/coursesInMentorFragment">
+
+    <fragment
+        android:id="@+id/coursesInMentorFragment"
+        android:name="com.otamurod.pdpuz.fragments.mentor_fragments.CoursesInMentorFragment"
+        android:label="fragment_courses_in_mentor"
+        tools:layout="@layout/fragment_courses_in_mentor" >
+        <action
+            android:id="@+id/action_coursesInMentorFragment_to_courseMentorFragment"
+            app:destination="@id/courseMentorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseMentorFragment"
+        android:name="com.otamurod.pdpuz.fragments.mentor_fragments.CourseMentorFragment"
+        android:label="fragment_course_mentor"
+        tools:layout="@layout/fragment_course_mentor" >
+        <action
+            android:id="@+id/action_courseMentorFragment_to_addMentorFragment"
+            app:destination="@id/addMentorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMentorFragment"
+        android:name="com.otamurod.pdpuz.fragments.mentor_fragments.AddMentorFragment"
+        android:label="fragment_add_mentor"
+        tools:layout="@layout/fragment_add_mentor" />
+</navigation>
