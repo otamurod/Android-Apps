@@ -107,13 +107,18 @@ class AllCoursesListFragment : Fragment() {
                     override fun onClick(dialog: DialogInterface?, which: Int) {
                         val courseName = dialogView.addCourseNameEt.text.toString()
                         val courseInfo = dialogView.addCourseInfoEt.text.toString()
-                        val course = Course(courseName, courseInfo)
-                        database.courseDao().insertCourse(course)
-                        list.add(course)
+                        if (courseName.isNotEmpty() && courseInfo.isNotEmpty()) {
+                            val course = Course(courseName, courseInfo)
+                            database.courseDao().insertCourse(course)
+                            list.add(course)
 
-                        courseAdapter.notifyItemInserted(list.size)
+                            courseAdapter.notifyItemInserted(list.size)
 
-                        Toast.makeText(context, "$courseName Qo'shildi", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "$courseName Qo'shildi", Toast.LENGTH_SHORT)
+                                .show()
+                        } else {
+                            Toast.makeText(context, "To'liq ma'lumot kiriting!", Toast.LENGTH_SHORT)
+                        }
                     }
 
                 })

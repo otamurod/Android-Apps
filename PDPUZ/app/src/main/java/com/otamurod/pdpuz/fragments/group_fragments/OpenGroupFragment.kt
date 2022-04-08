@@ -86,7 +86,10 @@ class OpenGroupFragment : Fragment() {
                 override fun onViewClick(group: Group, position: Int) {
                     Toast.makeText(context, "Ko'rish", Toast.LENGTH_SHORT).show()
 
-                    val bundle = bundleOf("course_id" to group.courseId, "group_id" to group.id)
+                    val bundle = bundleOf(
+                        "course_id" to group.courseId,
+                        "group_id" to group.id
+                    )
                     mainNavController.navigate(R.id.viewGroupFragment, bundle)
                 }
 
@@ -176,6 +179,7 @@ class OpenGroupFragment : Fragment() {
 
                     dialog.create()
                     dialog.show()
+                    true
                 }
 
                 override fun onDeleteClick(group: Group, position: Int) {

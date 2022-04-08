@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.otamurod.pdpuz.database.AppDatabase
 import com.otamurod.pdpuz.databinding.FragmentAddStudentToCourseBinding
-import com.otamurod.pdpuz.entities.Group
 import com.otamurod.pdpuz.entities.Mentor
 import com.otamurod.pdpuz.entities.Student
 import java.util.*
@@ -146,7 +145,15 @@ class AddStudentToCourseFragment : Fragment() {
             }
 
             //TODO: Save to database
-            if (groupName != null && mentorName != null) {
+            if (courseId != null &&
+                groupId != null &&
+                studentLastName.isNotEmpty() &&
+                studentFirstName.isNotEmpty() &&
+                studentMiddleName.isNotEmpty() &&
+                registrationDate.isNotEmpty() &&
+                mentorName != null &&
+                groupName != null
+            ) {
 
                 val student = Student(
                     courseId,

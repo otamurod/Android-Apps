@@ -3,6 +3,7 @@ package com.otamurod.pdpuz.fragments.course_fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -63,6 +64,28 @@ class CourseInfoFragment : Fragment() {
             val bundle = bundleOf("course_id" to id)
 
             findNavController().navigate(R.id.addStudentToCourseFragment, bundle)
+        }
+
+        var count = 1
+        courseInfoBinding.deleteCourseBtn.setOnClickListener {
+            if (count == 2) {
+                val course = database.courseDao().getCourseById(id!!)
+                database.courseDao().deleteCourse(course)
+                findNavController().navigateUp()
+                Toast.makeText(
+                    container.context,
+                    "Kurs o'chirildi",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            if (count < 2) {
+                count += 1
+                Toast.makeText(
+                    container.context,
+                    "Kursni o'chirish uchun yana bir marta bosing!",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
 
         return courseInfoBinding.root

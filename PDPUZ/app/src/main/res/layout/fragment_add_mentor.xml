@@ -22,7 +22,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tFamiliyasi"
+            android:hint="Familiyasi"
+            android:inputType="textPersonName"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -32,7 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tIsmi"
+            android:hint="Ismi"
+            android:inputType="textPersonName"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -42,7 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tOtasining ismi"
+            android:hint="Otasining ismi"
+            android:inputType="textPersonName"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 

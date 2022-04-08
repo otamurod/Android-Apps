@@ -86,6 +86,10 @@ class ViewGroupFragment : Fragment() {
                         list.remove(student)
                         studentAdapter.notifyItemRemoved(position)
                         studentAdapter.notifyItemRangeChanged(position, list.size)
+
+                        val studentsCount = database.studentDao().getStudentsInGroup(groupById.id!!)
+                        viewGroupBinding.numberOfStudents.text = "Talabalar soni: $studentsCount ta"
+
                         Toast.makeText(context, "Talaba o'chirildi", Toast.LENGTH_SHORT).show()
                     }
 
@@ -101,10 +105,15 @@ class ViewGroupFragment : Fragment() {
             }
         })
 
-        val studentsCount = database.studentDao().getStudentsInGroup(groupById.groupName!!)
+        val studentsCount = database.studentDao().getStudentsInGroup(groupById.id!!)
+
         viewGroupBinding.groupNameTv.text = groupById.groupName
         viewGroupBinding.numberOfStudents.text = "Talabalar soni: $studentsCount ta"
         viewGroupBinding.groupTimeInterval.text = "Vaqti: ${groupById.time}"
+
+        if (groupById.open == true) {
+            viewGroupBinding.startGroupBtn.visibility = View.GONE
+        }
 
         viewGroupBinding.startGroupBtn.setOnClickListener {
             groupById.open = true

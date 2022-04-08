@@ -58,9 +58,6 @@ class MainActivity : AppCompatActivity() {
                             //animation ended
                         })
                 })
-
-
         }
-
     }
 }

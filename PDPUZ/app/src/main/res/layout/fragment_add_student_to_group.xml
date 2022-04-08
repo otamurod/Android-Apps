@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tFamiliyasi"
+            android:hint="Familiyasi"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -32,7 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tIsmi"
+            android:hint="Ismi"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
@@ -42,21 +45,24 @@
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tOtasining ismi"
+            android:hint="Otasining ismi"
+            android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/student_added_date_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:drawableRight="@drawable/ic_calendar"
-            android:hint="\t\tRo'yxatdan o'tilgan sana"
-            android:inputType="date"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Ro'yxatdan o'tilgan sana"
+            android:padding="10dp"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:drawableRightCompat="@drawable/ic_calendar" />
 
     </LinearLayout>
 
@@ -68,7 +74,7 @@
 
         <Button
             android:id="@+id/save_student_btn"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:text="Saqlash"

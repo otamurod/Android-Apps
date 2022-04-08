@@ -52,7 +52,6 @@ class GroupToOpenFragment : Fragment() {
     lateinit var mainNavController: NavController
     lateinit var database: AppDatabase
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // we can get the innermost NavController using this view,
         // because we are inside its subtree:
@@ -75,6 +74,7 @@ class GroupToOpenFragment : Fragment() {
 
         database = AppDatabase.getInstance(requireContext())
         list = ArrayList()
+
         if (courseId != null) {
             list = database.groupDao().getGroupsByType(courseId!!, false) as ArrayList<Group>
         }
@@ -84,8 +84,10 @@ class GroupToOpenFragment : Fragment() {
 
                 override fun onViewClick(group: Group, position: Int) {
                     Toast.makeText(context, "Ko'rish", Toast.LENGTH_SHORT).show()
-
-                    val bundle = bundleOf("course_id" to group.courseId, "group_id" to group.id)
+                    val bundle = bundleOf(
+                        "course_id" to group.courseId,
+                        "group_id" to group.id
+                    )
                     mainNavController.navigate(R.id.viewGroupFragment, bundle)
                 }
 
@@ -172,9 +174,9 @@ class GroupToOpenFragment : Fragment() {
                             dialog?.cancel()
                         }
                     })
-
                     dialog.create()
                     dialog.show()
+                    true
                 }
 
                 override fun onDeleteClick(group: Group, position: Int) {
@@ -184,7 +186,6 @@ class GroupToOpenFragment : Fragment() {
                     groupAdapter.notifyItemRangeChanged(position, list.size)
                     Toast.makeText(context, "O'chirildi", Toast.LENGTH_SHORT).show()
                 }
-
             })
 
         groupToOpenBinding.rvGroup.adapter = groupAdapter

@@ -60,7 +60,7 @@ class AddMentorFragment : Fragment() {
             val mentorLastNameEt = addMentorBinding.mentorLastNameEt.text.toString()
             val mentorMiddleNameEt = addMentorBinding.mentorMiddleNameEt.text.toString()
 
-            if (mentorFirstNameEt != null && mentorLastNameEt != null && mentorMiddleNameEt != null) {
+            if (mentorFirstNameEt.isNotEmpty() && mentorLastNameEt.isNotEmpty() && mentorMiddleNameEt.isNotEmpty()) {
 
                 val mentor =
                     Mentor(courseId, mentorLastNameEt, mentorFirstNameEt, mentorMiddleNameEt)

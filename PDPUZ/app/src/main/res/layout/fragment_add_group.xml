@@ -4,10 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="23dp"
-    android:paddingTop="17dp"
-    android:paddingRight="23dp"
-    android:paddingBottom="17dp"
+    android:padding="20dp"
     tools:context=".fragments.group_fragments.AddGroupFragment">
 
     <LinearLayout
@@ -19,37 +16,69 @@
         <EditText
             android:id="@+id/group_name_et"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
-            android:hint="\t\tGuruh nomi"
+            android:hint="Guruh nomi"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:gravity="center_horizontal"
+            android:text="Mentorni tanlang 👇"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/mentor_spinner"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
             android:gravity="center"
             android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:gravity="center_horizontal"
+            android:text="Vaqtni tanlang 🕒"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/time_spinner"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"
             android:gravity="center"
             android:spinnerMode="dropdown" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:gravity="center_horizontal"
+            android:text="Kunni tanlang 🗓"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/day_spinner"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="6dp"
             android:background="@drawable/edit_background"

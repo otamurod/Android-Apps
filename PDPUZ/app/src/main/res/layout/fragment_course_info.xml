@@ -33,14 +33,25 @@
         </LinearLayout>
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/delete_course_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:src="@drawable/delete_img"
+        app:layout_constraintBottom_toBottomOf="@id/add_student_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/add_student_btn"
+        android:layout_marginLeft="40dp" />
+
     <Button
         android:id="@+id/add_student_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="23dp"
         android:layout_marginBottom="17dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:text="Talaba qo'shish"
         android:textAllCaps="false"
         android:textSize="16dp"

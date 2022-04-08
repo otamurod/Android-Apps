@@ -116,7 +116,12 @@ class AddGroupFragment : Fragment() {
             val time = addGroupBinding.timeSpinner.selectedItem.toString()
             val day = addGroupBinding.daySpinner.selectedItem.toString()
 
-            if (mentorId != null && courseId != null && groupName != null && time != null && day != null) {
+            if (mentorId != null
+                && courseId != null &&
+                groupName.isNotEmpty() &&
+                time.isNotEmpty() &&
+                day.isNotEmpty()
+            ) {
                 val group = Group(courseId, mentorId, groupName, time, day, false)
                 database.groupDao().insertGroup(group)
 

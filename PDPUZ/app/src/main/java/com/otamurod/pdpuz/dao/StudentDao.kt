@@ -20,8 +20,8 @@ interface StudentDao {
     @Query("select * from Student where courseId=:courseId and groupId=:groupId")
     fun getStudentsByGroupCourseId(courseId: Int, groupId: Int): List<Student>
 
-    @Query("select count(*) from Student where groupName=:groupName")
-    fun getStudentsInGroup(groupName: String): Int
+    @Query("select count(*) from Student where groupId=:groupId")
+    fun getStudentsInGroup(groupId: Int): Int
 
     @Insert
     fun insertStudent(student: Student)

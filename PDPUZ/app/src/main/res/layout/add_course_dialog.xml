@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingTop="20dp"
-    android:paddingBottom="0dp">
+    android:padding="20dp">
 
     <EditText
         android:id="@+id/add_course_name_et"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_margin="6dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@drawable/edit_background"
         android:hint="Kurs nomi"
-        android:textAlignment="center"
+        android:padding="10dp"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        tools:ignore="RtlCompat" />
+        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/add_course_info_et"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="6dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Kurs haqida"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        tools:ignore="RtlCompat" />
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/add_course_info_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@drawable/edit_background"
+            android:gravity="start"
+            android:hint="Kurs haqida"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </ScrollView>
 
 </LinearLayout>

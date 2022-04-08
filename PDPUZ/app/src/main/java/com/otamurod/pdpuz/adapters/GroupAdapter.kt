@@ -22,7 +22,7 @@ class GroupAdapter(
 
         fun onBind(group: Group, position: Int) {
 
-            val studentsCount = database.studentDao().getStudentsInGroup(group.groupName!!)
+            val studentsCount = database.studentDao().getStudentsInGroup(group.id!!)
 
             groupBinding.groupName.text = group.groupName
             groupBinding.numberOfStudents.text = "Talabalar soni: $studentsCount ta"

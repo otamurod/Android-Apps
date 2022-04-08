@@ -17,10 +17,13 @@ class CourseAdapter(var list: List<Course>, var onItemClickListener: OnItemClick
 
             val tokens = StringTokenizer(course.name, " ")
             val first: String = tokens.nextToken()
-            val second: String = tokens.nextToken()
-
+            try {
+                val second: String = tokens.nextToken()
+                courseBinding.tv.text = second
+            } catch (ex: NoSuchElementException) {
+                courseBinding.tv.text = ""
+            }
             courseBinding.groupNameTv.text = first
-            courseBinding.tv.text = second
 
             courseBinding.ticket.setOnClickListener {
                 onItemClickListener.onItemClick(list[position])

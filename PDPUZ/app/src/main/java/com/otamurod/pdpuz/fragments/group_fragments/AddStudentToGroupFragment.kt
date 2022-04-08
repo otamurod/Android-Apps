@@ -123,7 +123,16 @@ class AddStudentToGroupFragment : Fragment() {
             val mentor = database.mentorDao().getMentorById(groupById.mentorId!!)
             val mentorName = "${mentor.lastName} ${mentor.firstName}"
 
-            if (studentById != null) { //update
+            if (studentById != null &&
+                studentFirstName.isNotEmpty() &&
+                studentLastName.isNotEmpty() &&
+                studentMiddleName.isNotEmpty() &&
+                registrationDate.isNotEmpty() &&
+                groupId != null &&
+                groupById.groupName != null &&
+                groupById.courseId != null &&
+                mentorName.isNotEmpty()
+            ) { //update
                 studentById.firstName = studentFirstName
                 studentById.lastName = studentLastName
                 studentById.middleName = studentMiddleName
@@ -135,7 +144,15 @@ class AddStudentToGroupFragment : Fragment() {
 
                 database.studentDao().updateStudent(studentById)
 
-            } else {
+            } else if (studentFirstName.isNotEmpty() &&
+                studentLastName.isNotEmpty() &&
+                studentMiddleName.isNotEmpty() &&
+                registrationDate.isNotEmpty() &&
+                groupId != null &&
+                groupById.groupName != null &&
+                groupById.courseId != null &&
+                mentorName.isNotEmpty()
+            ) {
                 val student = Student(
                     groupById.courseId,
                     groupById.id,
@@ -147,10 +164,11 @@ class AddStudentToGroupFragment : Fragment() {
                     groupById.groupName
                 )
                 database.studentDao().insertStudent(student)
+                Toast.makeText(context, "Saqlandi", Toast.LENGTH_SHORT).show()
+                findNavController().navigateUp()
+            } else {
+                Toast.makeText(context, "To'liq ma'lumot kiriting", Toast.LENGTH_SHORT).show()
             }
-
-            Toast.makeText(context, "Saqlandi", Toast.LENGTH_SHORT).show()
-            findNavController().navigateUp()
         }
 
         return addStudentToGroupBinding.root
