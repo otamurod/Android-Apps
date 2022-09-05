@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "118674769838",
+    "firebase_url": "https://pdponline-1e022-default-rtdb.firebaseio.com",
+    "project_id": "pdponline-1e022",
+    "storage_bucket": "pdponline-1e022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118674769838:android:678dcf057e316309c06a3f",
+        "android_client_info": {
+          "package_name": "com.otamurod.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118674769838-1hdt63o7k29887sp1tlq63feimn5b100.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.otamurod.firebaseauth",
+            "certificate_hash": "5955032d1f530a818a67aadcd711155aac036b45"
+          }
+        },
+        {
+          "client_id": "118674769838-iia4efvn3mv3ot7okpg1a5k7h5b8a0gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw4gMag1QRAJwtT6pchFAloDXAhvHhTus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118674769838-iia4efvn3mv3ot7okpg1a5k7h5b8a0gj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

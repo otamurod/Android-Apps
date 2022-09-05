@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <!--text view for displaying our extracted text-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/idPDFTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/idBtnExtract"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:text="Extract Text from PDF"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--button for starting extraction process-->
+
+    <!--  <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_book"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+          tools:listitem="@layout/book" />
+  -->
+
+      <Button
+          android:id="@+id/show_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginBottom="10dp"
+          android:layout_weight="9"
+          android:background="@color/design_default_color_primary"
+          android:padding="8dp"
+          android:text="Select PDF File"
+          android:textColor="@color/white"
+          android:textSize="18sp" />
+
+</LinearLayout>
