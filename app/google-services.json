@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "991590106957",
+    "firebase_url": "https://yo-lga-hamroh-e3c36-default-rtdb.firebaseio.com",
+    "project_id": "yo-lga-hamroh-e3c36",
+    "storage_bucket": "yo-lga-hamroh-e3c36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991590106957:android:c974d5274cd288d0fa1904",
+        "android_client_info": {
+          "package_name": "com.otamurod.yolgahamroh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991590106957-i7qsbetf49b06cfengf66506rmv5d7bt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx5tRCp30V0glCE4f9c9MxRoVzOAO4GGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991590106957-i7qsbetf49b06cfengf66506rmv5d7bt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
